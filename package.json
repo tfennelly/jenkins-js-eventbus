@@ -1,0 +1,20 @@
+{
+  "name": "jenkins-js-eventbus",
+  "version": "0.0.1",
+  "description": "Jenkins client-side JavaScript event bus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Fennelly <tom.fennelly@gmail.com> (https://github.com/tfennelly)",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "jenkins-js-builder": "0.0.37",
+    "jenkins-js-test": "0.0.16"
+  },
+  "dependencies": {
+    "amq-ajax-client": "0.0.2",
+    "jquery-detached": "^2.1.4-v2"
+  }
+}

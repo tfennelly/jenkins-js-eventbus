@@ -1,0 +1,12 @@
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea
+out
+
+.classpath
+.project
+.settings
+
+node_modules/
