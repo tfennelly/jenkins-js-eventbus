@@ -31,5 +31,3 @@ eventBus.onPubSubEvent('job',
 The 3rd argument is an `eventProperties` object, which acts as a filter on the events you want to receive.
 So, for example, if you wanted to receive all `runStateChange` events for all jobs, then just drop the `jobName`
 property from the supplied `eventProperties` object.
-
-Also see [EventBusServerTest](src/test/java/jenkins/eventbus/EventBusServerTest.java).
