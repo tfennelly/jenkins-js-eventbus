@@ -19,10 +19,10 @@ describe("index.js", function () {
 
             eventBus.stop();
             
-            expect(requests[0].url).toBe('jenkins-eventbus');
+            expect(requests[0].url).toBe('/jenkins/jenkins-eventbus');
             expect(requests[0].data).toContain('timeout=1');
             expect(requests[0].beforeSend).toBeDefined();
-            expect(requests[1].url).toBe('jenkins-eventbus');
+            expect(requests[1].url).toBe('/jenkins/jenkins-eventbus');
             expect(requests[1].data).toContain('destination=topic://job&message');
             expect(requests[1].beforeSend).toBeDefined();
             

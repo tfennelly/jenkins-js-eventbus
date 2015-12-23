@@ -10,9 +10,10 @@ function newEventBus($) {
     var listeners = [];
     var eventBusAPI = {};
     
-    // Connect the ActiveMQ client back to the servlet running in Jenkins 
+    // Connect the ActiveMQ client back to the servlet running in Jenkins
+    var uri = getRootURL() + '/jenkins-eventbus'; 
     amq.init({
-        uri: 'jenkins-eventbus',
+        uri: uri,
         logging: true,
         timeout: 20
     });    
@@ -82,4 +83,35 @@ function toSQL92Selector(eventProperties) {
         }
     }
     return stringBuilder;        
+}
+
+function getHeadElement() {
+    var window = require('window-handle').getWindow();
+    var docHead = window.document.getElementsByTagName("head");
+    if (!docHead || docHead.length == 0) {
+        throw 'No head element found in document.';
+    }
+    return docHead[0];
+}
+
+function getRootURL() {
+    var docHead = getHeadElement();
+    var resURL = getAttribute(docHead, "data-rooturl");
+
+    if (!resURL) {
+        throw "Attribute 'data-rooturl' not defined on the document <head> element.";
+    }
+    
+    return resURL;
+}
+
+function getAttribute(element, attributeName) {
+    var value = element.getAttribute(attributeName.toLowerCase());
+    
+    if (value) {
+        return value;
+    } else {
+        // try without lowercasing
+        return element.getAttribute(attributeName);
+    }    
 }
