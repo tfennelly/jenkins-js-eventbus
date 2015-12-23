@@ -99,7 +99,7 @@ function getRootURL() {
     var resURL = getAttribute(docHead, "data-rooturl");
 
     if (!resURL) {
-        throw "Attribute 'data-rooturl' not defined on the document <head> element.";
+        return '';
     }
     
     return resURL;

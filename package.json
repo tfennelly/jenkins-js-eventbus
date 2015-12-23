@@ -1,6 +1,6 @@
 {
   "name": "jenkins-js-eventbus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Jenkins client-side JavaScript event bus",
   "main": "index.js",
   "scripts": {
