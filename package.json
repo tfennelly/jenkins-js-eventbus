@@ -1,6 +1,6 @@
 {
   "name": "jenkins-js-eventbus",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Jenkins client-side JavaScript event bus",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "jenkins-js-test": "0.0.16"
   },
   "dependencies": {
-    "amq-ajax-client": "0.0.2",
+    "amq-ajax-client": "0.0.3",
     "jquery-detached": "^2.1.4-v2",
     "window-handle": "0.0.6"
   }
