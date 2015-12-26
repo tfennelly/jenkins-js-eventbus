@@ -21,10 +21,13 @@ function newEventBus($) {
     eventBusAPI.onPubSubEvent = function(eventName, eventConsumer, eventProperties) {
         var listenerId = (new Date().getTime()).toString(); // generate an Id using the current time
         var destination = 'topic://' + eventName;
+        var eventConsumerDecoder = function(event) {
+            eventConsumer.call(event, $.parseJSON(event.data));
+        };
         if (eventProperties) {
-            amq.addListener(listenerId, destination, eventConsumer, {selector: toSQL92Selector(eventProperties)});
+            amq.addListener(listenerId, destination, eventConsumerDecoder, {selector: toSQL92Selector(eventProperties)});
         } else {
-            amq.addListener(listenerId, destination, eventConsumer);
+            amq.addListener(listenerId, destination, eventConsumerDecoder);
         }
         listeners.push({
             id: listenerId,
